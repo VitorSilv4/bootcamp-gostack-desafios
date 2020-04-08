@@ -33,12 +33,14 @@ module.exports = {
 
     const {title, url, techs} = request.body;
     
+    const { likes } = repositories.find(repositorie => repositorie.id === id);
+
     const repositorie = {
       id,
       title,
       url,
       techs,
-      likes: 0
+      likes
     };
 
     repositories[repositorieIndex] = repositorie;
